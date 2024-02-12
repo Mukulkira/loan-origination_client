@@ -12,7 +12,7 @@ export async function GET(req:NextApiRequest){
     method:"POST",
   })
   const data = await res.json()
-  console.log(data);
+//   console.log(data);
  
   return NextResponse.json({ data })
 }

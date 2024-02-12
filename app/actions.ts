@@ -1,0 +1,13 @@
+export const fetchData=async () => {
+    const res = await fetch('http://127.0.0.1:8000/api/predict/', {
+    headers:{
+        'Content-Type':'application/json',
+    },
+    body:JSON.stringify({
+        "company_name":"AAPL",
+    }),
+    method:"POST",
+  })
+  const articles:ArticlesType = await res.json();
+  return articles;
+}
