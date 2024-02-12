@@ -1,0 +1,27 @@
+{
+    "name": "Loan Origination",
+    "short_name": "loan origination service",
+    "icons": [
+      {
+        "src": "/random.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/random.png",
+        "sizes": "384x384",
+        "type": "image/png"
+      },
+      {
+        "src": "/random.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+  }
