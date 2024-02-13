@@ -1,4 +1,18 @@
 import type { Metadata } from "next";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { Toaster } from "react-hot-toast";
+ // or `v1X-appRouter` if you are using Next.js v1X
+
+//  export default function RootLayout(props) {
+//    return (
+//      <html lang="en">
+//        <body>
+// +      
+//        </body>
+//      </html>
+//    );
+//  }
+
 
 const APP_NAME = "Loan Origination";
 const APP_DESCRIPTION = "This is loan-origination service by Azentio";
@@ -30,14 +44,15 @@ export const metadata: Metadata = {
   ],
   keywords: ["loan", "origination", "loan-origination"],
 };
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout(props:any) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AppRouterCacheProvider>
+          <Toaster />
+          {props.children}
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
