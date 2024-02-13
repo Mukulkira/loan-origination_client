@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Toaster } from "react-hot-toast";
+import ResponsiveAppBar from "@/components/Navbar";
+import StickyFooter from "@/components/Footer";
  // or `v1X-appRouter` if you are using Next.js v1X
 
 //  export default function RootLayout(props) {
@@ -47,10 +49,14 @@ export const metadata: Metadata = {
 export default function RootLayout(props:any) {
   return (
     <html lang="en">
-      <body>
+      <body style={{
+        position:"relative"
+      }}>
         <AppRouterCacheProvider>
           <Toaster />
+          <ResponsiveAppBar />
           {props.children}
+          <StickyFooter />
         </AppRouterCacheProvider>
       </body>
     </html>

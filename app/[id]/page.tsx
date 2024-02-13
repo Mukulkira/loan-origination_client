@@ -10,7 +10,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     const articles = await fetchData(company_code);
     return (
         <div>
-            <Typography variant="h3">Positive articles:</Typography>
+            <Typography variant="h3">Potential Lead articles:</Typography>
             
             <EmailPrompt articles={articles.positive_articles} lead_gen={true} />
 
@@ -36,7 +36,10 @@ export default async function Page({ params }: { params: { id: string } }) {
                                     <Typography variant="h6">Summary:</Typography>
                                     <Typography>{article.summary}</Typography>
                                     {/* <image src={article.image?.toString() || ""} alt="Article image" height={256} width={256} /> */}
-                                    <Link href={article.url?.toString() || ""}>Follow for the article</Link>
+                                    <Link href={article.url?.toString() || ""} style={{
+                                        textDecoration:'none',
+                                        outline:'none',
+                                    }} target="blank">Read more...</Link>
                                 </CardContent>
                             </Card>
                         </Grid>
@@ -44,7 +47,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 })}
             </Grid>
 
-            <Typography variant="h3">Negative Articles:</Typography>
+            <Typography variant="h3">Warning News Articles:</Typography>
 
             <EmailPrompt articles={articles.negative_articles} lead_gen={false} />
             <Grid container spacing={2}>
@@ -66,7 +69,10 @@ export default async function Page({ params }: { params: { id: string } }) {
                                     <Typography variant="h6">Summary:</Typography>
                                     <Typography>{article.summary}</Typography>
                                     {/* <image src={article.image?.toString() || ""} alt="Article image" height={256} width={256} /> */}
-                                    <Link aria-description="Follow the link to redirect to the article" href={article.url?.toString() || ""}>Follow for the article</Link>
+                                    <Link href={article.url?.toString() || ""} style={{
+                                        textDecoration:'none',
+                                        outline:'none',
+                                    }} target="blank">Read more...</Link>
                                 </CardContent>
                             </Card>
                         </Grid>
