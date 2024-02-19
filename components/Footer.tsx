@@ -32,6 +32,9 @@ export default function StickyFooter() {
           display: 'flex',
           flexDirection: 'column',
         //   minHeight: '100vh',
+          position:'fixed',
+          bottom:0,
+          // zIndex:-1,
         }}
       >
         <CssBaseline />
@@ -41,8 +44,8 @@ export default function StickyFooter() {
           sx={{
             py: 3,
             px: 2,
-            bottom:0,
-            position:'fixed',
+            // bottom:0,
+            // position:'absolute',
             width:'100vw',
             backgroundColor: (theme) =>
               theme.palette.mode === 'light'

@@ -27,7 +27,7 @@ const SearchBar = () => {
                     />
                 </Grid>
                 <Grid item xs={3}>
-                    <Button variant="contained" type="submit" fullWidth>
+                    <Button variant="contained" type="submit" className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-500 hover:to-yellow-500" fullWidth>
                         Search
                     </Button>
                 </Grid>

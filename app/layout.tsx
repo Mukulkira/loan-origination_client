@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Toaster } from "react-hot-toast";
 import ResponsiveAppBar from "@/components/Navbar";
+import "./globals.css";
 import StickyFooter from "@/components/Footer";
  // or `v1X-appRouter` if you are using Next.js v1X
 
@@ -50,7 +51,8 @@ export default function RootLayout(props:any) {
   return (
     <html lang="en">
       <body style={{
-        position:"relative"
+        position:"relative",
+        // display:'flex',
       }}>
         <AppRouterCacheProvider>
           <Toaster />

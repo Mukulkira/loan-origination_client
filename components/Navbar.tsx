@@ -18,8 +18,9 @@ import Image from 'next/image';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Badge } from '@mui/material';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-const pages = ['Home', 'EWS', 'Lead Generation'];
+const pages = ['Home'];
 const settings = ['Profile', 'Account', 'Dashboard', 'EWS',  'Lead Generation','Logout'];
 
 function ResponsiveAppBar() {
@@ -40,6 +41,8 @@ function ResponsiveAppBar() {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+
+    const router=useRouter();
 
     return (
         <AppBar position="static">
@@ -108,7 +111,7 @@ function ResponsiveAppBar() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => router.push("/")}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}
@@ -127,7 +130,7 @@ function ResponsiveAppBar() {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src="" />
                             </IconButton>
                         </Tooltip>
                         <Menu
